@@ -67,7 +67,8 @@ ul {
   width: 100%;
   height: 100%;
   position: relative;
-  transition: transform 1s;
+  transition: transform 5s;
+  transform-style: preserve-3d;
   margin: 0 auto;
   border-radius: 10%;
   box-shadow: -15px 20px 20px rgba(22, 4, 74, 0.15);
@@ -84,6 +85,7 @@ ul {
   height: 100%;
   position: absolute;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .card__front {
@@ -114,7 +116,7 @@ ul {
   display: flex;
   justify-content: space-between;
 }
-.card__holder, 
+.card__holder,
 .card__expiration {
   display: flex;
   flex-direction: column;
@@ -128,5 +130,14 @@ ul {
 }
 .card__holder__name,
 .card__expiration__date {
-    text-transform:  uppercase;
+  text-transform: uppercase;
+}
+
+.card__back {
+  padding-top: 4rem;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
 }
